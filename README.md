@@ -44,12 +44,83 @@ Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
+Developed by:KARJHANI PRIYANKA S B
+
+RegisterNumber:212224040150
 */
 
-**RTL Schematic**
+FULL-ADDER
 
-**Output Timing Waveform**
+module exe_4(sum,count,a,b,cin):
+
+output sum;
+
+output count;
+
+input a;
+
+input b;
+
+input cin;
+
+wire s1,c1,c2;
+
+xor(s1,a,b);
+
+and(c1,s1,cin);
+
+xor(sum,s1,cin);
+
+and(c2,s1,cin);
+
+or(count,c2,c1);
+
+endmodule
+
+
+FULL-SUBTRACTER
+
+module exe_4(df,bo,a,b,bin);
+
+output df;
+
+output bo;
+
+input a;
+
+input b;
+
+input bin;
+
+wire w1,w2,w3;
+
+assign w1=a^b;
+
+assign w2=(~a&b);
+
+assign w3=(~w1&bin);
+
+assign df=w1^bin;
+
+assign bo=w2|w3;
+
+endmodule
+
+RTL Schematic:
+![image](https://github.com/user-attachments/assets/90289fc9-5c1c-47ca-b9c5-75e16c4e4dff)
+
+![image](https://github.com/user-attachments/assets/2da612e8-45ba-4c04-9d51-310b8f6ab5ba)
+
+
+
+
+Output Timing Waveform:
+![image](https://github.com/user-attachments/assets/d2ad136f-df96-4ef7-a4b4-c836733e1b60)
+
+![image](https://github.com/user-attachments/assets/9b042333-402e-4445-b8d7-6a7c8dfae175)
+
+
 
 **Result:**
 
